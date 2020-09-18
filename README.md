@@ -1,4 +1,4 @@
-# k2x_tool
+# K2X Converter
 kmp &lt;--> excel  
 tested on python 3.7.
 
