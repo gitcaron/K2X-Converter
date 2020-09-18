@@ -1,5 +1,4 @@
 import argparse
-import functools
 import os
 
 import pandas as pd
@@ -153,7 +152,7 @@ def excel_convert(path, output):
     sections = []
     for sheet in sheets:
       sections.append(writer.getaddress - 76)
-      df = pd.read_excel(path, sheet_name=sheet)
+      df = pd.read_excel(path, sheet_name=sheet, engine="openpyxl")
       df = df.drop("Unnamed: 0", axis=1)
 
       if sheet in target.keys():

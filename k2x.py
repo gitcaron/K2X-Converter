@@ -195,7 +195,7 @@ def kmp_dump(path, dest):
     
   with pd.ExcelWriter(output) as writer:
     for i in range(len(pd_dfs)):
-      pd_dfs[i].to_excel(writer, sheet_name=section_data[i])
+      pd_dfs[i].to_excel(writer, sheet_name=section_data[i], engine="openpyxl")
       if columns_expand[i] is not None:
         worksheet = writer.book[section_data[i]]
         if isinstance(columns_expand[i], str):
